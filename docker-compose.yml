@@ -1,11 +1,14 @@
+
 parse-server:
   build: ./parse-server-example
   ports:
     - "1337:1337"
+  volumes:
+    - ./parse-server-example:/parse
   environment:
     DATABASE_URI: $DATABASE_URI
-    APP_ID: $APP_ID
-    MASTER_KEY: $MASTER_KEY
+    APP_ID: $APP_ID # myAppId by default
+    MASTER_KEY: $MASTER_KEY # myMasterKey by default
     PARSE_MOUNT: $PARSE_MOUNT # /parse
     COLLECTION_PREFIX: $COLLECTION_PREFIX
     CLIENT_KEY: $CLIENT_KEY
