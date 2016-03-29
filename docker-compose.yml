@@ -1,10 +1,10 @@
 
 parse-server:
+  volumes:
+    - ./parse-server:/parse
   build: ./parse-server
   ports:
     - "1337:1337"
-  volumes:
-    - ./parse-server-example:/parse
   environment:
     DATABASE_URI: $DATABASE_URI
     APP_ID: $APP_ID # myAppId by default
