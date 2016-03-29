@@ -3,6 +3,7 @@ parse-server:
   volumes:
     - ./parse-server:/parse
   build: ./parse-server
+  command: npm start
   ports:
     - "1337:1337"
   environment:

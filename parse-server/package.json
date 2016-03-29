@@ -1,6 +1,5 @@
 {
-  "name": "Easy Parse",
-  "version": "1",
+  "name": "EasyParse",
   "description": "A simple docker sandbox for getting started with Parse Server",
   "main": "index.js",
   "repository": {
