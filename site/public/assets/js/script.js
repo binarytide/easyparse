@@ -14,7 +14,9 @@ Steps.init = function() {
 
 Steps.buildParseUrl = function() {
   var url = Config.getUrl();
+  var dashUrl = Config.getDashUrl();
   $('#parse-url').html(url);
+  $('#parse-dash-url').attr( 'href', dashUrl);
 }
 
 Steps.bindBtn = function(id, callback) {
@@ -109,10 +111,15 @@ Config.getUrl = function() {
   if (url) return url;
   var port = ':1337';
   var url = window.location.protocol + '//' + window.location.hostname + port + '/parse';
-  // if (port) url = url + ':' + port;
   return url;
 }
 
+Config.getDashUrl = function() {
+  if (url) return url;
+  var port = ':4040';
+  var url = window.location.protocol + '//' + window.location.hostname + port;
+  return url;
+}
 
 /**
  * XHR object
