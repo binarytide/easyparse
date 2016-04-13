@@ -14,7 +14,7 @@ Steps.init = function() {
 
 Steps.buildParseUrl = function() {
   var url = Config.getUrl();
-  $('#parse-url').html(url + '/parse');
+  $('#parse-url').html(url);
 }
 
 Steps.bindBtn = function(id, callback) {
@@ -63,7 +63,7 @@ ParseRequest.postData = function() {
       e.preventDefault();
     });
   });
-  XHR.POST('/parse/classes/GameScore');
+  XHR.POST('/classes/GameScore');
 }
 
 ParseRequest.getData = function() {
@@ -79,7 +79,7 @@ ParseRequest.getData = function() {
       e.preventDefault();
     })
   });
-  XHR.GET('/parse/classes/GameScore');
+  XHR.GET('/classes/GameScore');
 }
 
 ParseRequest.postCloudCodeData = function() {
@@ -91,7 +91,7 @@ ParseRequest.postCloudCodeData = function() {
     // open third step
     Steps.showWorkingMessage();
   });
-  XHR.POST('/parse/functions/hello');
+  XHR.POST('/functions/hello');
 }
 
 
@@ -107,9 +107,9 @@ var Config = {}
 
 Config.getUrl = function() {
   if (url) return url;
-  var port = window.location.port;
-  var url = window.location.protocol + '//' + window.location.hostname;
-  if (port) url = url + ':' + port;
+  var port = ':1337';
+  var url = window.location.protocol + '//' + window.location.hostname + port + '/parse';
+  // if (port) url = url + ':' + port;
   return url;
 }
 

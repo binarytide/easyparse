@@ -1,6 +1,8 @@
 {
   "apps": [
     {
+      "host": "localhost",
+      "port": "4040",
       "serverURL": "http://192.168.99.100:1337/parse",
       "appId": "myAppId",
       "masterKey": "myMasterKey"
@@ -9,10 +11,6 @@
   "users": [
     {
       "user":"user1",
-      "pass":"pass"
-    },
-    {
-      "user":"user2",
       "pass":"pass"
     }
   ]
